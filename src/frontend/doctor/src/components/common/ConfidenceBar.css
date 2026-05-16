@@ -1,0 +1,38 @@
+.confidence-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 100px;
+}
+
+.confidence-bar {
+  flex: 1;
+  height: 6px;
+  background-color: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.confidence-fill {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.confidence-fill.high {
+  background-color: #00A86B;
+}
+
+.confidence-fill.medium {
+  background-color: #F5A623;
+}
+
+.confidence-fill.low {
+  background-color: #E53E3E;
+}
+
+.confidence-value {
+  font-size: 12px;
+  font-weight: 500;
+  color: #1e293b;
+  min-width: 40px;
+}

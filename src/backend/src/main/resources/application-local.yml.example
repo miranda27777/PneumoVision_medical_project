@@ -1,0 +1,12 @@
+# 复制为 application-local.yml（该文件已在 .gitignore，不会进仓库）
+# 仅覆盖需要本地化的项即可，例如：
+#
+#spring:
+# datasource:
+#   url: jdbc:mysql://localhost:3306/pneumovision
+#   username: root
+#   password: 你的MySQL密码
+
+#security:
+# field-encryption:
+#   key: 你的字段加密密钥

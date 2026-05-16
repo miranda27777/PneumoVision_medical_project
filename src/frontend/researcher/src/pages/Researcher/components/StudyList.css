@@ -1,0 +1,357 @@
+.study-list-container {
+  margin-top: 16px;
+  background-color: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.study-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.study-list-header:hover {
+  background-color: #f1f5f9;
+}
+
+.study-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.expand-icon {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.study-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.study-count {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.create-study-btn {
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #2A6BFF 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.create-study-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(42, 107, 255, 0.3);
+}
+
+.study-list-content {
+  padding: 12px;
+}
+
+.study-loading,
+.study-empty {
+  text-align: center;
+  padding: 24px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.study-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.study-table th,
+.study-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.study-table th {
+  background-color: #f1f5f9;
+  font-weight: 600;
+  color: #475569;
+}
+
+.study-table tr:hover {
+  background-color: #f1f5f9;
+}
+
+.modality-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.modality-badge.dx {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.modality-badge.cr {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.study-description {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.study-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.study-action-btn {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.study-action-btn.edit {
+  background-color: #10b981;
+  color: white;
+}
+
+.study-action-btn.edit:hover {
+  background-color: #059669;
+}
+
+.study-action-btn.delete {
+  background-color: #ef4444;
+  color: white;
+}
+
+.study-action-btn.delete:hover {
+  background-color: #dc2626;
+}
+
+.view-detail-btn {
+  padding: 4px 12px;
+  background-color: #2A6BFF;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.view-detail-btn:hover {
+  background-color: #1a4fcc;
+}
+
+.detection-status {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.detection-status.detected {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.detection-status.pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.study-list-container {
+  margin-top: 12px;
+  background-color: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.study-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.study-list-header:hover {
+  background-color: #f1f5f9;
+}
+
+.study-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.expand-icon {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.study-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.study-count {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.study-list-content {
+  padding: 12px;
+}
+
+.study-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.study-table th,
+.study-table td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.study-table th {
+  background-color: #f1f5f9;
+  font-weight: 600;
+  color: #475569;
+}
+
+.study-table tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* 检测状态徽章 */
+.detection-status {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.detection-status.detected {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.detection-status.pending {
+  background-color: #fed7aa;
+  color: #9a3412;
+}
+
+/* 查看详情按钮 */
+.view-detail-btn {
+  padding: 4px 12px;
+  background-color: #2A6BFF;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 11px;
+  transition: all 0.2s;
+}
+
+.view-detail-btn:hover {
+  background-color: #1a4fcc;
+}
+
+.study-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.view-result-btn {
+  padding: 4px 12px;
+  background-color: #f59e0b;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 11px;
+  transition: all 0.2s;
+}
+
+.view-result-btn:hover {
+  background-color: #d97706;
+}
+
+.view-detail-btn {
+  padding: 4px 12px;
+  background-color: #2A6BFF;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 11px;
+  transition: all 0.2s;
+}
+
+.view-detail-btn:hover {
+  background-color: #1a4fcc;
+}
+
+/* 状态徽章 */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  min-width: 60px;
+}
+
+.status-success {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-failed {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.status-running {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.status-pending {
+  background-color: #fed7aa;
+  color: #9a3412;
+}

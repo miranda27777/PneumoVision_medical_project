@@ -1,0 +1,67 @@
+server:
+  port: 8080
+
+# Swagger / OpenAPI（可选）
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+
+app:
+  jwt:
+    secret: pneumovision-jwt-secret-change-in-production
+    expiration-ms: 86400000  # 24h
+
+spring:
+  config:
+    import: optional:classpath:application-local.yml
+  application:
+    name: pneumovision-backend
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/pneumovision}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:change-me}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 0
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  rabbitmq:
+    host: ${SPRING_RABBITMQ_HOST:127.0.0.1}
+    port: ${SPRING_RABBITMQ_PORT:5672}
+    username: ${SPRING_RABBITMQ_USERNAME:guest}
+    password: ${SPRING_RABBITMQ_PASSWORD:guest}
+    virtual-host: ${SPRING_RABBITMQ_VHOST:/}
+
+inference:
+  queue:
+    exchange: ${INFERENCE_QUEUE_EXCHANGE:inference.exchange}
+    routing-key: ${INFERENCE_QUEUE_ROUTING_KEY:inference.task}
+    name: ${INFERENCE_QUEUE_NAME:inference.task.queue}
+    dead-letter-exchange: ${INFERENCE_QUEUE_DLX:inference.dlx}
+    dead-letter-routing-key: ${INFERENCE_QUEUE_DLX_RK:inference.task.dead}
+    dead-letter-name: ${INFERENCE_QUEUE_DLQ:inference.task.dead.queue}
+    max-retries: ${INFERENCE_QUEUE_MAX_RETRIES:2}
+
+fastapi:
+  base-url: http://localhost:8081
+
+# 把自己的密钥填写在application-local.yml
+security:
+  field-encryption:
+    key: ${FIELD_ENCRYPTION_KEY}

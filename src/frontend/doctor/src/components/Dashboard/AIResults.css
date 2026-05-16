@@ -1,0 +1,143 @@
+.ai-results-container {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.result-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px;
+  transition: all 0.2s;
+}
+
+.result-card.red {
+  border-left: 4px solid #E53E3E;
+}
+
+.result-card.green {
+  border-left: 4px solid #00A86B;
+}
+
+.result-card.yellow {
+  border-left: 4px solid #F5A623;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.case-id {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.result-badge {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.result-content {
+  display: flex;
+  gap: 16px;
+}
+
+.image-placeholder {
+  width: 60px;
+  height: 60px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+}
+
+.xray-icon {
+  font-size: 30px;
+}
+
+.result-details {
+  flex: 1;
+}
+
+.confidence-display {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.confidence-label {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.confidence-value {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.confidence-bar {
+  height: 6px;
+  background-color: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.confidence-fill {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.confidence-fill.red {
+  background-color: #E53E3E;
+}
+
+.confidence-fill.green {
+  background-color: #00A86B;
+}
+
+.confidence-fill.yellow {
+  background-color: #F5A623;
+}
+
+.result-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.result-actions .action-btn {
+  flex: 1;
+  padding: 6px 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-btn.export {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.action-btn.view {
+  background-color: #eef2ff;
+  color: #2A6BFF;
+}
+
+.action-btn:hover {
+  opacity: 0.8;
+}

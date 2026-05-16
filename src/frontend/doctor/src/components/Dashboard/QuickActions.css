@@ -1,0 +1,462 @@
+.quick-actions {
+  margin-bottom: 24px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.quick-actions .section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.actions-grid {
+  display: flex;
+  gap: 12px;
+}
+
+.quick-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.quick-action-btn.primary,
+.quick-action-btn.dicom-export,
+.quick-action-btn.dicom-import {
+  background: linear-gradient(135deg, #2A6BFF 0%, #764ba2 100%);
+  color: white;
+}
+
+.quick-action-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(42, 107, 255, 0.3);
+}
+
+.quick-action-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.quick-action-icon {
+  font-size: 18px;
+}
+
+.quick-action-text {
+  white-space: nowrap;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.qa-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.qa-modal-content {
+  background-color: white;
+  border-radius: 20px;
+  width: 520px;
+  max-width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: qaModalFadeIn 0.2s ease-out;
+}
+
+.qa-modal-content.dicom-modal-content {
+  width: 760px;
+}
+
+@keyframes qaModalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.qa-modal-content > h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+  padding: 20px 24px;
+  margin: 0;
+  border-bottom: 1px solid #eef2ff;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  border-radius: 20px 20px 0 0;
+}
+
+/* DICOM 弹窗顶部固定标题栏 */
+.dicom-modal-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #eef2ff;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  border-radius: 20px 20px 0 0;
+}
+
+.dicom-modal-header h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.dicom-modal-close {
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dicom-modal-close:hover:not(:disabled) {
+  background: #e2e8f0;
+  color: #0f172a;
+  transform: translateY(-1px);
+}
+
+.dicom-modal-close:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.qa-form-group {
+  margin: 20px 24px;
+}
+
+.qa-form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+.required {
+  color: #e53e3e;
+  margin-left: 2px;
+}
+
+.qa-form-group input,
+.qa-form-group select,
+.qa-form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  background-color: #ffffff;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.qa-form-group input:hover,
+.qa-form-group select:hover,
+.qa-form-group textarea:hover {
+  border-color: #cbd5e1;
+}
+
+.qa-form-group input:focus,
+.qa-form-group select:focus,
+.qa-form-group textarea:focus {
+  outline: none;
+  border-color: #2A6BFF;
+  box-shadow: 0 0 0 3px rgba(42, 107, 255, 0.1);
+}
+
+.qa-form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.qa-form-row {
+  display: flex;
+  gap: 16px;
+  margin: 0 24px 20px 24px;
+}
+
+.qa-form-row .qa-form-group {
+  flex: 1;
+  margin: 0;
+}
+
+.qa-form-group.half {
+  flex: 1;
+}
+
+.qa-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px 24px;
+  border-top: 1px solid #f1f5f9;
+  background-color: #fafcff;
+  border-radius: 0 0 20px 20px;
+}
+
+.qa-modal-actions button {
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dicom-confirm-actions {
+  justify-content: flex-end;
+}
+
+.qa-btn-secondary {
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+}
+
+.qa-btn-secondary:hover:not(:disabled) {
+  background-color: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+.qa-btn-primary {
+  background: linear-gradient(135deg, #2A6BFF 0%, #764ba2 100%);
+  border: none;
+  color: white;
+}
+
+.qa-btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(42, 107, 255, 0.3);
+}
+
+.qa-btn-primary:disabled,
+.qa-btn-secondary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dicom-upload-box {
+  margin: 20px 24px;
+  padding: 18px;
+  border: 1px dashed #93c5fd;
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.dicom-upload-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.dicom-upload-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.dicom-upload-desc {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.dicom-file-name {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #2563eb;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.dicom-select-btn {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dicom-select-btn:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.dicom-select-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dicom-parse-summary {
+  margin: 0 24px 20px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.dicom-summary-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.dicom-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 16px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.missing-fields {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #92400e;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.missing-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dicom-mode-tabs {
+  margin: 0 24px 20px;
+  padding: 4px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  display: flex;
+  gap: 4px;
+}
+
+.dicom-mode-tab {
+  flex: 1;
+  border: none;
+  border-radius: 9px;
+  padding: 10px;
+  background: transparent;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dicom-mode-tab.active {
+  background: white;
+  color: #2563eb;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+}
+
+.dicom-section-divider {
+  margin: 4px 24px 16px;
+  padding-top: 18px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.qa-modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.qa-modal-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.qa-modal-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.qa-modal-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@media (max-width: 760px) {
+  .actions-grid {
+    flex-direction: column;
+  }
+
+  .quick-action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dicom-upload-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dicom-select-btn {
+    width: 100%;
+  }
+
+  .dicom-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .qa-form-row {
+    flex-direction: column;
+  }
+}

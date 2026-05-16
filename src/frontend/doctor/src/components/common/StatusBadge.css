@@ -1,0 +1,32 @@
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;        /* 禁止换行 */
+  line-height: 1.5;           /* 固定行高 */
+  text-align: center;
+  min-width: 64px;            /* 最小宽度，保证统一 */
+}
+
+.status-badge.completed {
+  background-color: #e6f7e6;
+  color: #00A86B;
+}
+
+.status-badge.processing {
+  background-color: #eef2ff;
+  color: #2A6BFF;
+}
+
+.status-badge.pending {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+/* 如果还想更紧凑，可以调整内边距 */
+.status-badge {
+  padding: 4px 8px;  /* 稍微减小左右内边距 */
+  min-width: 56px;   /* 调整最小宽度 */
+}

@@ -1,0 +1,19 @@
+models:
+  pneumo_v1:
+    type: yolo
+    path: model/best_yolo11.pt
+    enabled: true
+    params:
+      conf: 0.25
+      iou: 0.3
+      max_det: 5
+      top_k: 3
+  pneumo_v2:
+    type: rtdetr
+    path: model/best_rtdetr.pt
+    enabled: true
+    params:
+      conf: 0.4
+      iou: 0.05
+      max_det: 5
+      top_k: 2
