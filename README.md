@@ -12,7 +12,7 @@ PneumoVision 是一个肺部影像智能分析系统，提供病例管理、影�
 ├── docs                              # 项目文档，包含需求文档、设计说明书、测试用例及测试报告
 └── src
     ├── backend                       # Spring Boot API + 业务逻辑
-    ├── aices                         # FastAPI 推理服务
+    ├── aices                         # FastAPI 推理服务，包含模型、模型训练过程等
     ├── frontend                      # Web 前端
 ```
 
@@ -21,6 +21,10 @@ PneumoVision 是一个肺部影像智能分析系统，提供病例管理、影�
 - Backend: Java 17, Spring Boot, JPA, MySQL, Redis, RabbitMQ
 - Inference: Python, FastAPI
 - Frontend: React（Vite / CRA）
+- AI Models:
+
+   - RT-DETR（Real-Time Detection Transformer）：实时检测 Transformer 模型，采用端到端架构，无需 NMS 后处理，在密集目标和复杂场景下表现优异
+   - YOLO（You Only Look Once）：实时目标检测模型，以速度快、部署灵活著称，是工业界和学术界广泛应用的成熟方案
 
 ## 环境依赖
 
